@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "upgraded-winner:build:production"
+              "buildTarget": "upgraded-winner:build:production"
             },
             "development": {
-              "browserTarget": "upgraded-winner:build:development"
+              "buildTarget": "upgraded-winner:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "upgraded-winner:build"
+            "buildTarget": "upgraded-winner:build"
           }
         },
         "test": {
