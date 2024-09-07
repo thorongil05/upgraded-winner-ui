@@ -8,9 +8,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let player of players">
-      <td>{{ player.name }}</td>
-      <td>{{ player.team }}</td>
-      <td>{{ player.role }}</td>
+      <td class="text-center">{{ player.name }}</td>
+      <td class="text-center">{{ player.team | team }}</td>
+      <td class="text-center">{{ player.role | role }}</td>
     </tr>
   </tbody>
 </table>
