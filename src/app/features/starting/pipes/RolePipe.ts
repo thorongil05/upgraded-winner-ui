@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Role } from '../player';
 @Pipe({
-  standalone: true,
   name: 'role',
 })
 export class RolePipe implements PipeTransform {

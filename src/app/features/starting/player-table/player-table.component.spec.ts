@@ -10,8 +10,7 @@ describe('PlayerTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PlayerTableComponent],
-      imports: [TeamPipe, RolePipe],
+      declarations: [PlayerTableComponent, TeamPipe, RolePipe],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayerTableComponent);

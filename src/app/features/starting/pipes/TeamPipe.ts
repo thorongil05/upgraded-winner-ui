@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Team } from '../player';
 @Pipe({
-  standalone: true,
   name: 'team',
 })
 export class TeamPipe implements PipeTransform {
