@@ -29,6 +29,7 @@ jobs:
       - name: Run chrome
         run: |
           export DISPLAY=$HOST_IP:10.0 && /usr/bin/google-chrome
+          echo $DISPLAY
           google-chrome --no-sandbox
       - run: npm ci
       - run: npm run build --if-present
