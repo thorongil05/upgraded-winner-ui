@@ -29,6 +29,7 @@ jobs:
       - name: Run chrome
         run: |
           export DISPLAY=$HOST_IP:10.0 && /usr/bin/google-chrome
+          X11Forwarding yes
           echo $DISPLAY
           google-chrome --no-sandbox
       - run: npm ci
