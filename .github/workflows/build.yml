@@ -21,8 +21,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set DISPLAY environment variable
-        run: bash export DISPLAY=$HOST_IP:10.0 && chromium
+      - name: Execute command to avoid error Unable to open X display.
+        run: |
+          sudo apt-get install xvfb 
+          xvfb-run --auto-servernum npm run protractor
+        shell: bash
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
