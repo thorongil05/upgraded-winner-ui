@@ -21,16 +21,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Execute command to avoid error Unable to open X display.
-        run: |
-          sudo apt-get install xvfb 
-          xvfb-run --auto-servernum npm run protractor
-        shell: bash
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Run chrome
+        run: google-chrome --no-sandbox
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
