@@ -27,7 +27,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: Run chrome
-        run: google-chrome --no-sandbox
+        run: |
+          export DISPLAY=$HOST_IP:10.0 && /usr/bin/google-chrome
+          google-chrome --no-sandbox
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
