@@ -5,10 +5,12 @@
   ></app-starting-carousel>
 </div>
 <footer>
-  <div *ngIf="isStartingOk()[0]">
-    <div class="row bg-success">{{ isStartingOk()[1] | rule }}</div>
-  </div>
-  <div *ngIf="!isStartingOk()[0]">
-    <div class="row bg-warning">{{ isStartingOk()[1] | rule }}</div>
+  <div class="text-light text-center">
+    <div *ngIf="isStartingOk()[0]">
+      <div class="row bg-success">Ok</div>
+    </div>
+    <div *ngIf="!isStartingOk()[0]">
+      <div class="row bg-warning">{{ isStartingOk()[1] | rule }}</div>
+    </div>
   </div>
 </footer>

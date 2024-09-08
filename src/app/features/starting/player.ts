@@ -10,6 +10,20 @@ export enum Team {
   JUVENTUS,
   INTER,
   MILAN,
+  GENOA,
+  FIORENTINA,
+  VERONA,
+  LAZIO,
+  ROMA,
+  MONZA,
+  NAPOLI,
+  CAGLIARI,
+  VENEZIA,
+  TORINO,
+  PARMA,
+  LECCE,
+  UDINESE,
+  ATALANTA,
 }
 
 export interface Player {
