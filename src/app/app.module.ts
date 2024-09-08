@@ -3,13 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlayerTableComponent } from './features/starting/player-table/player-table.component';
-import { RolePipe } from './features/starting/pipes/RolePipe';
-import { TeamPipe } from './features/starting/pipes/TeamPipe';
+import { FeaturesModule } from './features/features.module';
 
 @NgModule({
-  declarations: [AppComponent, PlayerTableComponent],
-  imports: [BrowserModule, AppRoutingModule, RolePipe, TeamPipe],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, FeaturesModule],
   providers: [],
   bootstrap: [AppComponent],
 })
