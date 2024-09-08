@@ -4,6 +4,8 @@ import { PlayerTableComponent } from './player-table/player-table.component';
 import { StartingCarouselComponent } from './starting-carousel/starting-carousel.component';
 import { RolePipe } from './pipes/RolePipe';
 import { TeamPipe } from './pipes/TeamPipe';
+import { StartingMainComponent } from './starting-main/starting-main.component';
+import { RulePipe } from './pipes/RulePipe';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { TeamPipe } from './pipes/TeamPipe';
     StartingCarouselComponent,
     RolePipe,
     TeamPipe,
+    RulePipe,
+    StartingMainComponent,
   ],
   imports: [CommonModule],
-  exports: [StartingCarouselComponent],
+  exports: [StartingMainComponent],
 })
 export class StartingModule {}

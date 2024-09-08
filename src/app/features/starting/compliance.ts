@@ -1,0 +1,5 @@
+export enum Rule {
+  ONLY_ONE_GOALKEEPER,
+  ONLY_ONE_PLAYER_PER_TEAM,
+  UNDEF,
+}
