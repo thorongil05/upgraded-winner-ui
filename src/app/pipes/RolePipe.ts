@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Role } from '../player';
+import { Role } from '../features/starting/player';
 @Pipe({
   name: 'role',
 })

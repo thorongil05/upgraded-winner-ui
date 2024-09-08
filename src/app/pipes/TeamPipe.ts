@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Team } from '../player';
+import { Team } from '../features/starting/player';
 @Pipe({
   name: 'team',
 })

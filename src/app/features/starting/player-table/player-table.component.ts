@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { PlayerService } from '../service/player.service';
 
@@ -7,12 +7,8 @@ import { PlayerService } from '../service/player.service';
   templateUrl: './player-table.component.html',
   styleUrl: './player-table.component.scss',
 })
-export class PlayerTableComponent implements OnInit {
-  players: Player[] = [];
+export class PlayerTableComponent {
+  @Input() players: Player[] = [];
 
-  constructor(private playerService: PlayerService) {}
-
-  ngOnInit(): void {
-    this.players = this.playerService.getStarting();
-  }
+  constructor() {}
 }

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerTableComponent } from './player-table/player-table.component';
-import { RolePipe } from './pipes/RolePipe';
-import { TeamPipe } from './pipes/TeamPipe';
+import { StartingCarouselComponent } from './starting-carousel/starting-carousel.component';
 
 @NgModule({
-  declarations: [PlayerTableComponent, RolePipe, TeamPipe],
+  declarations: [PlayerTableComponent, StartingCarouselComponent],
   imports: [CommonModule],
-  exports: [PlayerTableComponent],
+  exports: [StartingCarouselComponent],
 })
 export class StartingModule {}

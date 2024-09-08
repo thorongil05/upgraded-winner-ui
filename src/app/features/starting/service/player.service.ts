@@ -14,6 +14,76 @@ export class PlayerService {
         team: Team.BOLOGNA,
         role: Role.DEFENDER,
       },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Posch',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+    ];
+  }
+
+  getBench(): Player[] {
+    return [
+      {
+        name: 'Giocatore Random',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Giocatore Random',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Giocatore Random',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Giocatore Random',
+        team: Team.BOLOGNA,
+        role: Role.DEFENDER,
+      },
     ];
   }
 }
