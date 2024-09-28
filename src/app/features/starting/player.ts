@@ -24,6 +24,7 @@ export enum Team {
   LECCE,
   UDINESE,
   ATALANTA,
+  COMO,
 }
 
 export interface Player {

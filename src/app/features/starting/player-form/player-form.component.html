@@ -1,0 +1,53 @@
+<mat-dialog-content>
+  <form (ngSubmit)="this.submit()">
+    <div class="row">
+      <div class="d-flex justify-content-center align-items-center">
+        <h3>Sostituisci</h3>
+      </div>
+    </div>
+    <div class="row mb-3 mt-3">
+      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Enter some input</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="10"
+          placeholder="Ex. Nougat"
+          [value]="this.selectedPlayer.name"
+        />
+        <mat-hint align="end">hint</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row mb-3 mt-3">
+      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Enter some input</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="10"
+          placeholder="Ex. Nougat"
+          [value]="this.selectedPlayer.role | role"
+        />
+        <mat-hint align="end">hint</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row mb-3 mt-3">
+      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Enter some input</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="10"
+          placeholder="Ex. Nougat"
+          [value]="this.selectedPlayer.team | team"
+        />
+        <mat-hint align="end">hint</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center align-items-center">
+        <button mat-flat-button class="mx-auto my-auto">Salva</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

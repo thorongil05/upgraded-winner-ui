@@ -6,6 +6,11 @@ import { RolePipe } from './pipes/RolePipe';
 import { TeamPipe } from './pipes/TeamPipe';
 import { StartingMainComponent } from './starting-main/starting-main.component';
 import { RulePipe } from './pipes/RulePipe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PlayerFormComponent } from './player-form/player-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,8 +20,15 @@ import { RulePipe } from './pipes/RulePipe';
     TeamPipe,
     RulePipe,
     StartingMainComponent,
+    PlayerFormComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   exports: [StartingMainComponent],
 })
 export class StartingModule {}

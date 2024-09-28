@@ -16,53 +16,53 @@ export class PlayerService {
         role: Role.GOALKEEPER,
       },
       {
+        name: 'Daniliuc',
+        team: Team.VERONA,
+        role: Role.DEFENDER,
+      },
+      {
+        name: 'Tavares',
+        team: Team.LAZIO,
+        role: Role.DEFENDER,
+      },
+      {
         name: 'Mina',
         team: Team.CAGLIARI,
         role: Role.DEFENDER,
       },
       {
-        name: 'Dimarco',
-        team: Team.INTER,
+        name: 'Coulibaly',
+        team: Team.PARMA,
         role: Role.DEFENDER,
       },
       {
-        name: 'Tomori',
-        team: Team.MILAN,
-        role: Role.DEFENDER,
-      },
-      {
-        name: 'De Winter',
-        team: Team.GENOA,
-        role: Role.DEFENDER,
-      },
-      {
-        name: 'Richardson',
+        name: 'Colpani',
         team: Team.FIORENTINA,
         role: Role.MIDFIELDER,
       },
       {
-        name: 'Harroui',
-        team: Team.VERONA,
-        role: Role.MIDFIELDER,
-      },
-      {
-        name: 'Zaccagni',
-        team: Team.LAZIO,
-        role: Role.MIDFIELDER,
-      },
-      {
-        name: 'Dovbyk',
+        name: 'Soule',
         team: Team.ROMA,
-        role: Role.STRICKER,
+        role: Role.MIDFIELDER,
       },
       {
-        name: 'Djuric',
-        team: Team.MONZA,
-        role: Role.STRICKER,
-      },
-      {
-        name: 'Lukaku',
+        name: 'McTominay',
         team: Team.NAPOLI,
+        role: Role.MIDFIELDER,
+      },
+      {
+        name: 'Retegui',
+        team: Team.ATALANTA,
+        role: Role.STRICKER,
+      },
+      {
+        name: 'Lautaro',
+        team: Team.INTER,
+        role: Role.STRICKER,
+      },
+      {
+        name: 'Abraham',
+        team: Team.MILAN,
         role: Role.STRICKER,
       },
     ];
@@ -81,8 +81,8 @@ export class PlayerService {
         role: Role.DEFENDER,
       },
       {
-        name: 'Man',
-        team: Team.PARMA,
+        name: 'Paz',
+        team: Team.COMO,
         role: Role.MIDFIELDER,
       },
       {
@@ -96,8 +96,8 @@ export class PlayerService {
         role: Role.STRICKER,
       },
       {
-        name: 'Retegui',
-        team: Team.ATALANTA,
+        name: 'Castro',
+        team: Team.BOLOGNA,
         role: Role.STRICKER,
       },
     ];
