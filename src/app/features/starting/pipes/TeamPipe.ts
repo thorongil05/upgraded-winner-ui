@@ -8,6 +8,8 @@ export class TeamPipe implements PipeTransform {
     switch (value) {
       case Team.JUVENTUS:
         return 'Juventus';
+      case Team.COMO:
+        return 'Como';
       case Team.BOLOGNA:
         return 'Bologna';
       case Team.INTER:

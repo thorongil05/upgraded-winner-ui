@@ -19,29 +19,23 @@
       </mat-form-field>
     </div>
     <div class="row mb-3 mt-3">
-      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
-        <mat-label>Enter some input</mat-label>
-        <input
-          matInput
-          #input
-          maxlength="10"
-          placeholder="Ex. Nougat"
-          [value]="this.selectedPlayer.role | role"
-        />
-        <mat-hint align="end">hint</mat-hint>
+      <mat-form-field>
+        <mat-label>Ruolo</mat-label>
+        <mat-select [(value)]="this.selectedPlayer.role">
+          @for (role of selectableRoles; track role) {
+          <mat-option [value]="role">{{ role | role }}</mat-option>
+          }
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="row mb-3 mt-3">
-      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
-        <mat-label>Enter some input</mat-label>
-        <input
-          matInput
-          #input
-          maxlength="10"
-          placeholder="Ex. Nougat"
-          [value]="this.selectedPlayer.team | team"
-        />
-        <mat-hint align="end">hint</mat-hint>
+      <mat-form-field>
+        <mat-label>Squadra</mat-label>
+        <mat-select [(value)]="this.selectedPlayer.team">
+          @for (team of selectableTeams; track team) {
+          <mat-option [value]="team">{{ team | team }}</mat-option>
+          }
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="row">
