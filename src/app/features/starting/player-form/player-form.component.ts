@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Player, Role, Team } from '../player';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-player-form',
@@ -8,6 +9,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrl: './player-form.component.scss',
 })
 export class PlayerFormComponent {
+  playerFormGroup: FormGroup = new FormGroup({
+    name: new FormControl(),
+    role: new FormControl(),
+    team: new FormControl(),
+  });
+
   selectedPlayer: Player;
   selectableRoles: Role[] = [Role.DEFENDER, Role.MIDFIELDER, Role.STRICKER];
   selectableTeams: Team[] = [
@@ -34,10 +41,16 @@ export class PlayerFormComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { player: Player }) {
     this.selectedPlayer = data.player;
+    this.playerFormGroup.setValue({
+      name: this.selectedPlayer.name,
+      role: this.selectedPlayer.role,
+      team: this.selectedPlayer.team,
+    });
   }
 
   save() {
-    console.log('Selected player');
-    console.log(this.selectedPlayer);
+    this.selectedPlayer.name = this.playerFormGroup.value['name'];
+    this.selectedPlayer.role = this.playerFormGroup.value['role'];
+    this.selectedPlayer.team = this.playerFormGroup.value['team'];
   }
 }

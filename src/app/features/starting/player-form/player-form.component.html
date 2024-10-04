@@ -1,5 +1,5 @@
 <mat-dialog-content>
-  <form>
+  <form [formGroup]="playerFormGroup" (ngSubmit)="this.save()">
     <div class="row">
       <div class="d-flex justify-content-center align-items-center">
         <h3>Sostituisci</h3>
@@ -13,7 +13,7 @@
           #input
           maxlength="10"
           placeholder="Ex. Nougat"
-          [value]="this.selectedPlayer.name"
+          formControlName="name"
         />
         <mat-hint align="end">hint</mat-hint>
       </mat-form-field>
@@ -21,7 +21,7 @@
     <div class="row mb-3 mt-3">
       <mat-form-field>
         <mat-label>Ruolo</mat-label>
-        <mat-select [(value)]="this.selectedPlayer.role">
+        <mat-select formControlName="role">
           @for (role of selectableRoles; track role) {
           <mat-option [value]="role">{{ role | role }}</mat-option>
           }
@@ -31,7 +31,7 @@
     <div class="row mb-3 mt-3">
       <mat-form-field>
         <mat-label>Squadra</mat-label>
-        <mat-select [(value)]="this.selectedPlayer.team">
+        <mat-select formControlName="team">
           @for (team of selectableTeams; track team) {
           <mat-option [value]="team">{{ team | team }}</mat-option>
           }
@@ -43,7 +43,7 @@
       <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
       <button
         mat-flat-button
-        (click)="this.save()"
+        type="submit"
         [mat-dialog-close]="this.selectedPlayer"
         class="mx-auto my-auto"
       >

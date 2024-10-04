@@ -1,20 +1,26 @@
+<div class="float-end m-2">
+  <div *ngIf="isStartingOk()[0]">
+    <button
+      mat-fab
+      aria-label="Example icon button with a delete icon"
+      class="text-light text-center bg-success"
+    >
+      <mat-icon>check</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!isStartingOk()[0]">
+    <button
+      mat-fab
+      aria-label="Example icon button with a delete icon"
+      class="text-light text-center bg-warning"
+    >
+      <mat-icon>warning</mat-icon>
+    </button>
+  </div>
+</div>
 <div class="container">
   <app-starting-carousel
     [startingEleven]="this.startingEleven"
     [bench]="this.bench"
   ></app-starting-carousel>
 </div>
-<footer>
-  <div class="text-light text-center">
-    <div *ngIf="isStartingOk()[0]">
-      <div class="row bg-success">
-        <p>Ok</p>
-      </div>
-    </div>
-    <div *ngIf="!isStartingOk()[0]">
-      <div class="row bg-warning">
-        <p>{{ isStartingOk()[1] | rule }}</p>
-      </div>
-    </div>
-  </div>
-</footer>
