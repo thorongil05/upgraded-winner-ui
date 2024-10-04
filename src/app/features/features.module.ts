@@ -4,8 +4,8 @@ import { StartingCarouselComponent } from './starting/starting-carousel/starting
 import { StartingModule } from './starting/starting.module';
 
 @NgModule({
-  declarations: [StartingCarouselComponent],
+  declarations: [],
   imports: [CommonModule, StartingModule],
-  exports: [StartingCarouselComponent],
+  exports: [],
 })
 export class FeaturesModule {}

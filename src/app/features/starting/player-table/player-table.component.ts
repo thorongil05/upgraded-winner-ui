@@ -12,7 +12,7 @@ import { PlayerFormComponent } from '../player-form/player-form.component';
 export class PlayerTableComponent {
   @Input() players: Player[] = [];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private readonly dialog: MatDialog) {}
 
   openDialog(player: Player) {
     console.log('Opening form for player', player);
@@ -23,7 +23,9 @@ export class PlayerTableComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+      if (result != undefined && !(result instanceof String)) {
+        player = result;
+      }
     });
   }
 }

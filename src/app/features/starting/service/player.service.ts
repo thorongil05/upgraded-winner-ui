@@ -149,7 +149,7 @@ export class PlayerService {
   private isLineUpCompliant(lineup: Map<Role, number>): boolean {
     let defenders = lineup.get(Role.DEFENDER) || 0;
     let midfielders = lineup.get(Role.MIDFIELDER) || 0;
-    let strickers = lineup.get(Role.STRICKER) || 0;
+    let strickers = lineup.get(Role.STRICKER) ?? 0;
     let total = defenders + midfielders + strickers;
     if (total != 10) return false;
     if (defenders == 4) {

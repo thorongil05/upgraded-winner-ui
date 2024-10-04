@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Player, Role, Team } from '../player';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-player-form',
@@ -36,5 +36,8 @@ export class PlayerFormComponent {
     this.selectedPlayer = data.player;
   }
 
-  submit() {}
+  save() {
+    console.log('Selected player');
+    console.log(this.selectedPlayer);
+  }
 }
