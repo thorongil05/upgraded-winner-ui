@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Player } from '../player';
 import { PlayerService } from '../service/player.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,6 +11,8 @@ import { PlayerFormComponent } from '../player-form/player-form.component';
 })
 export class PlayerTableComponent {
   @Input() players: Player[] = [];
+
+  @Output() onPlayerUpdatedEvent = new EventEmitter<void>();
 
   constructor(private readonly dialog: MatDialog) {}
 
@@ -25,6 +27,8 @@ export class PlayerTableComponent {
     dialogRef.afterClosed().subscribe((result) => {
       if (result != undefined && !(result instanceof String)) {
         player = result;
+        console.log('Emitting dialog closed event');
+        this.onPlayerUpdatedEvent.emit();
       }
     });
   }

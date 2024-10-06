@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { PlayerService } from '../service/player.service';
 import { Player } from '../player';
-import { Rule } from '../compliance';
+import { ValidationService } from '../service/validation.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ValidationResult } from '../validation-result';
 
 @Component({
   selector: 'app-starting-main',
@@ -11,15 +13,41 @@ import { Rule } from '../compliance';
 export class StartingMainComponent {
   startingEleven: Player[] = [];
   bench: Player[] = [];
+  isStartingOk: boolean = true;
+  validationErrorList: string[] = [];
 
-  constructor(private playerService: PlayerService) {}
+  constructor(
+    private playerService: PlayerService,
+    private readonly validationService: ValidationService,
+    private readonly matSnackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.startingEleven = this.playerService.getStarting();
     this.bench = this.playerService.getBench();
+    this.validateStarting();
   }
 
-  isStartingOk(): [boolean, Rule] {
-    return this.playerService.isCompliant(this.startingEleven, this.bench);
+  validateStarting() {
+    return this.validationService
+      .validate(this.startingEleven, this.bench)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          let value = data as ValidationResult;
+          this.isStartingOk = value.valid;
+          this.validationErrorList = value.validationErrorList;
+        },
+        error: (error) => console.error(error),
+        complete: () => console.log('complete'),
+      });
+  }
+
+  openSnack() {
+    if (this.isStartingOk) {
+      this.matSnackBar.open('The starting lineup is ok.');
+    } else {
+      this.matSnackBar.open(this.validationErrorList[0]);
+    }
   }
 }

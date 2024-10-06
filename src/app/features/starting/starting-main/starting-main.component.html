@@ -1,18 +1,20 @@
 <div class="float-end m-2">
-  <div *ngIf="isStartingOk()[0]">
+  <div *ngIf="isStartingOk">
     <button
       mat-fab
       aria-label="Example icon button with a delete icon"
       class="text-light text-center bg-success"
+      (click)="this.openSnack()"
     >
       <mat-icon>check</mat-icon>
     </button>
   </div>
-  <div *ngIf="!isStartingOk()[0]">
+  <div *ngIf="!isStartingOk">
     <button
       mat-fab
       aria-label="Example icon button with a delete icon"
       class="text-light text-center bg-warning"
+      (click)="this.openSnack()"
     >
       <mat-icon>warning</mat-icon>
     </button>
@@ -22,5 +24,6 @@
   <app-starting-carousel
     [startingEleven]="this.startingEleven"
     [bench]="this.bench"
+    (onStartingElementUpdated)="this.validateStarting()"
   ></app-starting-carousel>
 </div>

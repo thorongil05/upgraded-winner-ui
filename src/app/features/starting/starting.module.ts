@@ -14,6 +14,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
+    MatSnackBarModule,
   ],
   exports: [StartingMainComponent],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class StartingModule {}
