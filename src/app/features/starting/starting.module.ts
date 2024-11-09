@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import {
   provideHttpClient,
@@ -39,6 +40,7 @@ import {
     MatSelectModule,
     MatIconModule,
     MatSnackBarModule,
+    MatExpansionModule,
   ],
   exports: [StartingMainComponent],
   providers: [provideHttpClient(withInterceptorsFromDi())],
