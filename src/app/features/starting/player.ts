@@ -11,6 +11,7 @@ export enum Team {
   INTER = 'Inter',
   MILAN = 'Milan',
   GENOA = 'Genoa',
+  EMPOLI = 'Empoli',
   FIORENTINA = 'Fiorentina',
   VERONA = 'Verona',
   LAZIO = 'Lazio',

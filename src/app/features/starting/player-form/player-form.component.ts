@@ -22,6 +22,7 @@ export class PlayerFormComponent {
     Team.BOLOGNA,
     Team.CAGLIARI,
     Team.COMO,
+    Team.EMPOLI,
     Team.FIORENTINA,
     Team.GENOA,
     Team.INTER,
