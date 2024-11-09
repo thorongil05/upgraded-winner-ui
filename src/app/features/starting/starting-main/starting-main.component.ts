@@ -17,7 +17,7 @@ export class StartingMainComponent {
   validationErrorList: string[] = [];
 
   constructor(
-    private playerService: PlayerService,
+    private readonly playerService: PlayerService,
     private readonly validationService: ValidationService,
     private readonly matSnackBar: MatSnackBar
   ) {}
