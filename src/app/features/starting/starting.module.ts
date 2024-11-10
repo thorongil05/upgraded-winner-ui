@@ -16,6 +16,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import {
   provideHttpClient,
@@ -47,6 +48,7 @@ import { PlayerColumnarCardComponent } from './player-columnar-card/player-colum
     MatExpansionModule,
     MatCardModule,
     MatDividerModule,
+    DragDropModule,
   ],
   exports: [StartingMainComponent],
   providers: [provideHttpClient(withInterceptorsFromDi())],

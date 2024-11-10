@@ -8,8 +8,6 @@
         midfielder: isMidfielder(),
         stricker: isStricker()
       }"
-      (click)="this.openDialog(player)"
-      (keydown.enter)="this.openDialog(player)"
     >
       <mat-card-header>
         <mat-card-title-group>
@@ -18,6 +16,11 @@
             player.team
           }}</mat-card-subtitle>
         </mat-card-title-group>
+        <mat-card-actions align="end">
+          <button mat-button (click)="this.openDialog(player)">
+            <mat-icon class="text-light">edit</mat-icon>
+          </button>
+        </mat-card-actions>
       </mat-card-header>
     </mat-card>
   </div>

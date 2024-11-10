@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player, Role } from '../player';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-player-columnar-layout',
@@ -31,5 +36,20 @@ export class PlayerColumnarLayoutComponent {
 
   emitPlayerUpdateEvent() {
     this.onPlayerUpdatedEvent.emit();
+  }
+
+  onDropDefender(event: CdkDragDrop<Player[]>) {
+    let newDefender: Player = event.previousContainer.data[event.previousIndex];
+    newDefender.role = Role.DEFENDER;
+  }
+
+  onDropMidfielder(event: CdkDragDrop<Player[]>) {
+    let newMidfielder: Player =
+      event.previousContainer.data[event.previousIndex];
+    newMidfielder.role = Role.MIDFIELDER;
+  }
+  onDropStricker(event: CdkDragDrop<Player[]>) {
+    let newStricker: Player = event.previousContainer.data[event.previousIndex];
+    newStricker.role = Role.STRICKER;
   }
 }
