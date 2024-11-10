@@ -7,13 +7,13 @@
     </div>
     <div class="row mb-3 mt-3">
       @if (!isGoalkeeper) {
-      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+      <mat-form-field hintLabel="Max 20 characters" appearance="outline">
         <mat-label>Enter some input</mat-label>
         <input
           matInput
           #input
-          maxlength="10"
-          placeholder="Ex. Nougat"
+          maxlength="20"
+          placeholder="Ex. Holly Hutton"
           formControlName="name"
         />
         <mat-hint align="end">hint</mat-hint>
@@ -21,7 +21,7 @@
       }
     </div>
     <div class="row mb-3 mt-3">
-      <mat-form-field>
+      <mat-form-field hintLabel="Select the team">
         <mat-label>Squadra</mat-label>
         <mat-select formControlName="team">
           @for (team of selectableTeams; track team) {

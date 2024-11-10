@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlayerTableComponent } from './player-table/player-table.component';
 import { RolePipe } from './pipes/RolePipe';
 import { TeamPipe } from './pipes/TeamPipe';
 import { StartingMainComponent } from './starting-main/starting-main.component';
@@ -15,20 +14,25 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { PlayerColumnarLayoutComponent } from './player-columnar-layout/player-columnar-layout.component';
+import { PlayerColumnarCardComponent } from './player-columnar-card/player-columnar-card.component';
 
 @NgModule({
   declarations: [
-    PlayerTableComponent,
     RolePipe,
     TeamPipe,
     RulePipe,
     StartingMainComponent,
     PlayerFormComponent,
+    PlayerColumnarLayoutComponent,
+    PlayerColumnarCardComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +45,8 @@ import {
     MatIconModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatCardModule,
+    MatDividerModule,
   ],
   exports: [StartingMainComponent],
   providers: [provideHttpClient(withInterceptorsFromDi())],

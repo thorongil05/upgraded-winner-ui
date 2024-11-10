@@ -1,21 +1,37 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Player } from '../player';
-import { MatDialog } from '@angular/material/dialog';
+import { Player, Role, Team } from '../player';
 import { PlayerFormComponent } from '../player-form/player-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-player-table',
-  templateUrl: './player-table.component.html',
-  styleUrl: './player-table.component.scss',
+  selector: 'app-player-columnar-card',
+  templateUrl: './player-columnar-card.component.html',
+  styleUrl: './player-columnar-card.component.scss',
 })
-export class PlayerTableComponent {
-  @Input() players: Player[] = [];
-
+export class PlayerColumnarCardComponent {
+  @Input() player: Player | undefined;
   @Output() onPlayerUpdatedEvent = new EventEmitter<void>();
 
   constructor(private readonly dialog: MatDialog) {}
 
-  openDialog(player: Player) {
+  isGoalkeeper() {
+    return this.player?.role == Role.GOALKEEPER;
+  }
+
+  isDefender() {
+    return this.player?.role == Role.DEFENDER;
+  }
+
+  isMidfielder() {
+    return this.player?.role == Role.MIDFIELDER;
+  }
+
+  isStricker() {
+    return this.player?.role == Role.STRICKER;
+  }
+
+  openDialog(player: Player | undefined) {
+    if (!player) return;
     console.log('Opening form for player', player);
     const dialogRef = this.dialog.open(PlayerFormComponent, {
       data: {

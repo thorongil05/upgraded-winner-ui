@@ -22,17 +22,15 @@
 </div>
 <div class="container">
   <h3 class="text-center">Starting XI</h3>
-  <app-player-table
+  <app-player-columnar-layout
     [players]="this.startingEleven"
     (onPlayerUpdatedEvent)="this.validateStarting()"
-  ></app-player-table>
-  <mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>Bench</mat-expansion-panel-header>
-      <app-player-table
-        [players]="this.bench"
-        (onPlayerUpdatedEvent)="this.validateStarting()"
-      ></app-player-table>
-    </mat-expansion-panel>
-  </mat-accordion>
+  >
+  </app-player-columnar-layout>
+  <mat-divider></mat-divider>
+  <app-player-columnar-layout
+    [players]="this.bench"
+    (onPlayerUpdatedEvent)="this.validateStarting()"
+  >
+  </app-player-columnar-layout>
 </div>

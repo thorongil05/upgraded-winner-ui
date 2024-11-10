@@ -45,9 +45,13 @@ export class StartingMainComponent {
 
   openSnack() {
     if (this.isStartingOk) {
-      this.matSnackBar.open('The starting lineup is ok.');
+      this.matSnackBar.open('The starting lineup is ok.', 'Close', {
+        duration: 5000,
+      });
     } else {
-      this.matSnackBar.open(this.validationErrorList[0]);
+      this.matSnackBar.open(this.validationErrorList[0], 'Close', {
+        duration: 5000,
+      });
     }
   }
 }
