@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col align-self-center">
+      <app-player-columnar-card
+        [player]="getGoalkeeper()"
+        (onPlayerUpdatedEvent)="this.emitPlayerUpdateEvent()"
+      >
+      </app-player-columnar-card>
+    </div>
+    <div
+      class="col align-self-center"
+      #defenders="cdkDropList"
+      cdkDropList
+      [cdkDropListData]="getDefenders()"
+      [cdkDropListConnectedTo]="[midfielders, strickers]"
+      (cdkDropListDropped)="onDropDefender($event)"
+    >
+      @for (item of getDefenders(); track $index) {
+      <app-player-columnar-card
+        [player]="item"
+        (onPlayerUpdatedEvent)="this.emitPlayerUpdateEvent()"
+        cdkDrag
+      ></app-player-columnar-card>
+      }
+    </div>
+    <div
+      class="col align-self-center"
+      cdkDropList
+      #midfielders="cdkDropList"
+      [cdkDropListData]="getMidfielders()"
+      [cdkDropListConnectedTo]="[defenders, strickers]"
+      (cdkDropListDropped)="onDropMidfielder($event)"
+    >
+      @for (item of getMidfielders(); track $index) {
+      <app-player-columnar-card
+        [player]="item"
+        (onPlayerUpdatedEvent)="this.emitPlayerUpdateEvent()"
+        cdkDrag
+      ></app-player-columnar-card>
+      }
+    </div>
+    <div
+      class="col align-self-center"
+      cdkDropList
+      #strickers="cdkDropList"
+      [cdkDropListData]="getStrickers()"
+      [cdkDropListConnectedTo]="[defenders, midfielders]"
+      (cdkDropListDropped)="onDropStricker($event)"
+    >
+      @for (item of getStrickers(); track $index) {
+      <app-player-columnar-card
+        [player]="item"
+        (onPlayerUpdatedEvent)="this.emitPlayerUpdateEvent()"
+        cdkDrag
+      ></app-player-columnar-card>
+      }
+    </div>
+  </div>
+</div>

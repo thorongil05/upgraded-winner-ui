@@ -1,0 +1,27 @@
+<ng-container *ngIf="player">
+  <div class="m-3">
+    <mat-card
+      appearance="outlined"
+      [ngClass]="{
+        goalkeeper: isGoalkeeper(),
+        defender: isDefender(),
+        midfielder: isMidfielder(),
+        stricker: isStricker()
+      }"
+    >
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="text-light">{{ player.name }}</mat-card-title>
+          <mat-card-subtitle class="text-light">{{
+            player.team
+          }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-actions align="end">
+          <button mat-button (click)="this.openDialog(player)">
+            <mat-icon class="text-light">edit</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</ng-container>
