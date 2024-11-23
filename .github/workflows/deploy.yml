@@ -17,7 +17,7 @@ jobs:
         run: |
           git fetch
           git checkout gh-pages
-          git merge master -X ours
+          git merge master -X ours --allow-unrelated-histories
       - name: Generate files
         run: |
           ng build --output-path docs --base-href /upgraded-winner/
