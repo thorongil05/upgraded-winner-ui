@@ -17,7 +17,7 @@ jobs:
         run: |
           git fetch
           git checkout gh-pages
-          git merge master -X ours --allow-unrelated-histories
+          git merge master -X theirs --allow-unrelated-histories
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
@@ -33,5 +33,7 @@ jobs:
           cp ./docs/index.html ./docs/404.html
       - name: Push
         run: |
+          git add .
+          git commit -m "deploy: deploying a new version"
           git status
           git push
