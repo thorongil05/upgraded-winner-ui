@@ -33,6 +33,6 @@ jobs:
           cp ./docs/index.html ./docs/404.html
       - name: Commit & Push
         run: |
-          git add ./docs
+          git add .
           git commit -m "deploy: deploying a new version"
           git push
