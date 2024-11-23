@@ -6,30 +6,22 @@
       </div>
     </div>
     <div class="row mb-3 mt-3">
-      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+      @if (!isGoalkeeper) {
+      <mat-form-field hintLabel="Max 20 characters" appearance="outline">
         <mat-label>Enter some input</mat-label>
         <input
           matInput
           #input
-          maxlength="10"
-          placeholder="Ex. Nougat"
+          maxlength="20"
+          placeholder="Ex. Holly Hutton"
           formControlName="name"
         />
         <mat-hint align="end">hint</mat-hint>
       </mat-form-field>
+      }
     </div>
     <div class="row mb-3 mt-3">
-      <mat-form-field>
-        <mat-label>Ruolo</mat-label>
-        <mat-select formControlName="role">
-          @for (role of selectableRoles; track role) {
-          <mat-option [value]="role">{{ role | role }}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="row mb-3 mt-3">
-      <mat-form-field>
+      <mat-form-field hintLabel="Select the team">
         <mat-label>Squadra</mat-label>
         <mat-select formControlName="team">
           @for (team of selectableTeams; track team) {

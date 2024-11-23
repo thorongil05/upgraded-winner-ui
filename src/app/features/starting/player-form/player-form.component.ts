@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Player, Role, Team } from '../player';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -16,12 +16,14 @@ export class PlayerFormComponent {
   });
 
   selectedPlayer: Player;
+  isGoalkeeper = false;
   selectableRoles: Role[] = [Role.DEFENDER, Role.MIDFIELDER, Role.STRICKER];
   selectableTeams: Team[] = [
     Team.ATALANTA,
     Team.BOLOGNA,
     Team.CAGLIARI,
     Team.COMO,
+    Team.EMPOLI,
     Team.FIORENTINA,
     Team.GENOA,
     Team.INTER,
@@ -41,6 +43,7 @@ export class PlayerFormComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { player: Player }) {
     this.selectedPlayer = data.player;
+    this.isGoalkeeper = this.selectedPlayer.role == Role.GOALKEEPER;
     this.playerFormGroup.setValue({
       name: this.selectedPlayer.name,
       role: this.selectedPlayer.role,

@@ -21,9 +21,16 @@
   </div>
 </div>
 <div class="container">
-  <app-starting-carousel
-    [startingEleven]="this.startingEleven"
-    [bench]="this.bench"
-    (onStartingElementUpdated)="this.validateStarting()"
-  ></app-starting-carousel>
+  <h3 class="text-center">Starting XI</h3>
+  <app-player-columnar-layout
+    [players]="this.startingEleven"
+    (onPlayerUpdatedEvent)="this.validateStarting()"
+  >
+  </app-player-columnar-layout>
+  <mat-divider></mat-divider>
+  <app-player-columnar-layout
+    [players]="this.bench"
+    (onPlayerUpdatedEvent)="this.validateStarting()"
+  >
+  </app-player-columnar-layout>
 </div>

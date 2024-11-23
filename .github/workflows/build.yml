@@ -14,18 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 22.x
           cache: "npm"
       - run: npm ci
       - run: npm run build --if-present
       # - run: npm test # enable it again as soon as you manage to run chrome in the runner
+      - name: Configure Github Account
+        run: |
+          git config --global user.name 'thorongil05'
+          git config --global user.email 'thorongil05@users.noreply.github.com'
+      - name: Update version
+        run: 'npm version patch -m "build: update to %s"'
+      - name: Push
+        run: |
+          git push --follow-tags

@@ -12,6 +12,8 @@ export class TeamPipe implements PipeTransform {
         return 'Como';
       case Team.BOLOGNA:
         return 'Bologna';
+      case Team.EMPOLI:
+        return 'Empoli';
       case Team.INTER:
         return 'Inter';
       case Team.MILAN:
