@@ -1,0 +1,28 @@
+name: Deploy on Github Pages
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Github Account
+        run: |
+          git config --global user.name 'thorongil05'
+          git config --global user.email 'thorongil05@users.noreply.github.com'
+      - name: Merge master on gh-pages branch
+        run: |
+          git checkout gh-pages
+          git merge master -X ours
+      - name: Generate files
+        run: |
+          ng build --output-path docs --base-href /upgraded-winner/
+          cp program docs/index.html docs/404.html
+      - name: Commit & Push
+        run: |
+          git add *
+          git commit -m "deploy: deploying a new version"
+          git push
