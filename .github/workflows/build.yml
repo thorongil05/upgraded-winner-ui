@@ -26,8 +26,8 @@ jobs:
       # - run: npm test # enable it again as soon as you manage to run chrome in the runner
       - name: Configure Github Account
         run: |
-          git config --global 'thorongil05'
-          git config --global 'thorongil05@users.noreply.github.com'
+          git config --global user.name 'thorongil05'
+          git config --global user.email 'thorongil05@users.noreply.github.com'
       - name: Update version
         run: 'npm version patch -m "build: update to %s"'
       - name: Push
