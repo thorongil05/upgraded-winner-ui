@@ -18,6 +18,14 @@ jobs:
           git fetch
           git checkout gh-pages
           git merge master -X ours --allow-unrelated-histories
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: "npm"
+      - name: Install angular CLI
+        run: |
+          npm install -g @angular/cli
       - name: Generate files
         run: |
           ng build --output-path docs --base-href /upgraded-winner/
