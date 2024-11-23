@@ -30,7 +30,7 @@ jobs:
         run: |
           npm install
           ng build --output-path docs --base-href /upgraded-winner/
-          cp program .docs/index.html .docs/404.html
+          cp program ./docs/index.html ./docs/404.html
       - name: Commit & Push
         run: |
           git add *
