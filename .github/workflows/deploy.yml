@@ -34,6 +34,4 @@ jobs:
       - name: Commit & Push
         run: |
           git status
-          git add .
-          git commit -m "deploy: deploying a new version"
           git push
