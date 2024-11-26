@@ -1,5 +1,5 @@
 <div class="float-end m-2">
-  <div *ngIf="isStartingOk">
+  <div class="m-2" *ngIf="isStartingOk">
     <button
       mat-fab
       aria-label="Example icon button with a delete icon"
@@ -9,7 +9,7 @@
       <mat-icon>check</mat-icon>
     </button>
   </div>
-  <div *ngIf="!isStartingOk">
+  <div class="m-2" *ngIf="!isStartingOk">
     <button
       mat-fab
       aria-label="Example icon button with a delete icon"
@@ -17,6 +17,16 @@
       (click)="this.openSnack()"
     >
       <mat-icon>warning</mat-icon>
+    </button>
+  </div>
+  <div class="m-2">
+    <button
+      mat-fab
+      aria-label="Example icon button with a delete icon"
+      class="text-light text-center bg-secondary"
+      (click)="this.copyToClipboard()"
+    >
+      <mat-icon>content_copy</mat-icon>
     </button>
   </div>
 </div>

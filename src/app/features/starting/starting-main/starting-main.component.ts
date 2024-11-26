@@ -4,6 +4,8 @@ import { Player } from '../player';
 import { ValidationService } from '../service/validation.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationResult } from '../validation-result';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { TextExporterService } from '../service/text-exporter.service';
 
 @Component({
   selector: 'app-starting-main',
@@ -19,7 +21,9 @@ export class StartingMainComponent {
   constructor(
     private readonly playerService: PlayerService,
     private readonly validationService: ValidationService,
-    private readonly matSnackBar: MatSnackBar
+    private readonly matSnackBar: MatSnackBar,
+    private readonly clipboard: Clipboard,
+    private readonly textExporterService: TextExporterService
   ) {}
 
   ngOnInit(): void {
@@ -53,5 +57,14 @@ export class StartingMainComponent {
         duration: 5000,
       });
     }
+  }
+
+  copyToClipboard() {
+    this.clipboard.copy(
+      this.textExporterService.export(this.startingEleven, this.bench)
+    );
+    this.matSnackBar.open('Copied in the clipboard', 'Close', {
+      duration: 3000,
+    });
   }
 }

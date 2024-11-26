@@ -24,6 +24,7 @@ import {
 } from '@angular/common/http';
 import { PlayerColumnarLayoutComponent } from './player-columnar-layout/player-columnar-layout.component';
 import { PlayerColumnarCardComponent } from './player-columnar-card/player-columnar-card.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { PlayerColumnarCardComponent } from './player-columnar-card/player-colum
     MatCardModule,
     MatDividerModule,
     DragDropModule,
+    ClipboardModule,
   ],
   exports: [StartingMainComponent],
   providers: [provideHttpClient(withInterceptorsFromDi())],
